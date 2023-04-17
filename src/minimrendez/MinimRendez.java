@@ -1,20 +1,33 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
+
 package minimrendez;
 
-/**
- *
- * @author SzendefiKrisztoferDá
- */
 public class MinimRendez {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        int[] tomb = {
+            334, 434, 2, 34, 312, 31,6 ,56 , 654, 33
+        };
+        int[] rendezett = minimumRendezes(tomb);
+        for (int i = 0; i < rendezett.length - 1; i++) {
+            System.out.print(rendezett[i] + ", ");
+        }
+        System.out.print(rendezett[rendezett.length-1]);
+    }
+
+    private static int[] minimumRendezes(int[] tomb) {
+        for (int i = 0; i < tomb.length - 1; i++) {
+            int min = i;
+            for (int j = i+1; j < tomb.length; j++) {
+                if (tomb[min] > tomb[j]) {
+                    min = j;
+                }
+            }
+            int w;
+            w = tomb[i];
+            tomb[i] = tomb[min];
+            tomb[min] = w;
+        }
+        return tomb;
     }
     
 }
