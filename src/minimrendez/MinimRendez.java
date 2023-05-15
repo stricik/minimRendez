@@ -7,8 +7,9 @@ public class MinimRendez {
     static Random rnd = new Random();
     
     public static void main(String[] args) {
-        int[] tomb = new int [10];
-        tomb = randomFeltoltes(tomb, 10);
+        int tombHossz = 10;
+        int[] tomb = new int [tombHossz];
+        tomb = randomFeltoltes(tomb, tombHossz);
         System.out.println("rendezetlen:");
         tombKiir(tomb);
         int[] rendezett = minimumRendezes(tomb);
